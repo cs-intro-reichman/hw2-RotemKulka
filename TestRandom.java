@@ -2,22 +2,21 @@
 public  class  TestRandom {
 	public static void main(String[]  args) {
 	    int n = Integer.parseInt(args[0]);
-		double a = 0;
-		double b = 0;
+		int greaterThanHalf = 0;
+		int lessOrEqualHalf = 0;
 		for (int i=0; i<n; i++){
 			double random = Math.random();
 			if (random>0.5) {
-				a = a+1;
+				greaterThanHalf++;
 			} else {
-				b = b+1;
+				lessOrEqualHalf++;
 			}
 		}
-		System.out.println("> 0.5: "+(int)a+" times");
-		System.out.println("<= 0.5: "+(int)b+" times");
-		if (a>b && a!=0 && b!=0){
-			System.out.println("Ratio: "+b/a);
-		} else if (a<=b && a!=0 && b!=0){
-			System.out.println("Ratio: "+a/b);
-		}
+		System.out.println("> 0.5: "+greaterThanHalf+" times");
+		System.out.println("<= 0.5: "+lessOrEqualHalf+" times");
+		
+		if (lessOrEqualHalf!=0){
+			System.out.println("Ratio: "+(double)greaterThanHalf/lessOrEqualHalf);
+		} 
 	}
 }
